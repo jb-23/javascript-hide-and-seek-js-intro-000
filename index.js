@@ -21,13 +21,13 @@ function deepestChild() {
   return favouriteChild(n);
 }
 
-function favouriteChild(node) {
-  var favouredChild = { node: null, depth: 0 };
-  if (node.children.length === 0) {
-    return { node: node, depth: 0 }
+function favouriteChild(n) {
+  if (n.children.length === 0) {
+    return { node: n, depth: 0 }
   }
-  for (var i=0; i<node.children.length; ++i) {
-    var candidateChild = favouriteChild(node.children[i]);
+  var favouredChild = { node: 0, depth: 0 };
+  for (var i=0; i<n.children.length; ++i) {
+    var candidateChild = favouriteChild(n.children[i]);
     if (candidateChild.depth > favouredChild.depth) {
       favouredChild.node = candidateChild.node;
       favouredChild.depth = candidateChild.depth;
