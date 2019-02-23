@@ -8,7 +8,11 @@ function nestedTarget() {
 }
 
 function increaseRankBy(n) {
-
+  var a = document.querySelectorAll(".ranked-list li");
+  a.foreach(e => {
+    var x = parseInt(e.innerHTML, 10);
+    e.innerHTML = x + n;
+  });
 }
 
 function deepestChild() {
