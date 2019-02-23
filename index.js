@@ -25,7 +25,7 @@ function deepestChild() {
   //  n = n.children
   //}
   while(1) {
-    console.error(n);
+    if (n) console.error("*");
     if (n.children.length === 0)  break;
     n = n.children[0];
   }
