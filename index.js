@@ -27,7 +27,7 @@ function favouriteChild(n) {
   if (n.children.length === 0) {
     return { node: n, depth: 0 }
   }
-  var favouredChild = { node: 0, depth: 0 };
+  var favouredChild = { node: 0, depth: -1 };
   for (var i=0; i<n.children.length; ++i) {
     var candidateChild = favouriteChild(n.children[i]);
     if (candidateChild.depth > favouredChild.depth) {
